@@ -1,0 +1,93 @@
+document.addEventListener('DOMContentLoaded', () => {
+ projectForm = document.getElementById('프로젝트 양식')를 구성합니다;
+
+ // 프로젝트 생성 폼 처리
+ if (프로젝트 양식) {
+ projectForm.addEventListener('제출', (e) => {
+ e.freventDefault();
+
+ const title = document.getElementById('title').가치;
+ 구성 설명 = document.getElementById('description').가치;
+ const gal = parseInt(document.getElementById('gal').가치);
+ constimage = document.getElementById('image').파일[0];
+
+ // 간단한 유효성 검사
+ 만약 (!title ||!desc 설명 ||!골 ||!이미지) {
+ alert('모든 필드를 입력해 주세요.');
+ 반환;
+ }
+
+ // 이미지 미리보기 (선택 사항)
+ 구성 판독기 = 새 파일 판독기();
+ reader.onload = 함수(이벤트) {
+ // 로컬 스토리지에 데이터를 저장합니다. 실제로는 백엔드 서버로 전송해야 합니다.
+ 건설 프로젝트 = JSON.parse(localStorage.getItem('projects') || [];
+ 새 프로젝트 구성 = {
+ ID: Date.now(),
+ 제목,
+ 묘사,
+ 목표,
+ 현재: 0,
+ 이미지: event.target.result
+ };
+ project.push(새 프로젝트);
+ 로컬 스토리지.setItem('projects', JSON.stringify(projects));
+ alert('프로젝트가 성공적으로 생성되었습니다!');
+ projectForm.reset();
+ window.위치href = 'index.html';
+ }
+ reader.readAsDataURL(이미지);
+ });
+ }
+
+ // 프로젝트 상세 페이지 로드
+ conto projectDetailSection = document.getElementById('project-detail');
+ if (프로젝트 세부 정보 섹션) {
+ urlParams = new URLesearchParams(window.location)를 구성합니다.검색);
+ projectId = parseInt(urlParams.get('id');
+
+ 건설 프로젝트 = JSON.parse(localStorage.getItem('projects') || [];
+ 건설 프로젝트 = project.find(p => p.id === projectId);
+
+ 만약 (프로젝트) {
+ document.getElementById('프로젝트 제목').textContent = project.title;
+ document.getElementById('프로젝트-이미지').src = project.image;
+ document.getElementById('프로젝트 설명').textContent = project.desc 설명;
+ document.getElementById('프로젝트 목표').textContent = project.gal.toLocaleString();
+ document.getElementById('프로젝트-현재').textContent = project.current.toLocaleString();
+ } 기타 {
+ 프로젝트 세부 정보섹션.innerHTML = '<p>프로젝트를 찾을 수 없습니다.</p>';
+ }
+ }
+
+ // 프로젝트 상세 페이지 후원 버튼 처리
+ supportButton = document.getElementById('support-button')를 구성합니다.
+ if (지원 버튼) {
+ supportButton.addEventListener('클릭', () => {
+ urlParams = new URLesearchParams(window.location)를 구성합니다.검색);
+ projectId = parseInt(urlParams.get('id');
+
+ 건설 프로젝트 = JSON.parse(localStorage.getItem('projects') || [];
+ 건설 프로젝트인덱스 = projects.findIndex(p => p.id === projectId);
+
+ 만약(프로젝트)인덱스!== -1) {
+ const amount = prompt('후원할 금액을 입력해 주세요 (₩):');
+ const numberAmount = parseInt(금액);
+
+ if (isNaN(숫자 금액) || 숫자 금액 <= 0) {
+ alert('유효한 금액을 입력해 주세요.');
+ 반환;
+ }
+
+ 프로젝트[프로젝트]인덱스].현재 += 숫자 금액;
+ 로컬 스토리지.setItem('projects', JSON.stringify(projects));
+ alert('₩${numeric Amount.toLocaleString()} 후원해 주셔서 감사합니다!');
+
+ // 페이지 새로고침하여 업데이트된 금액 표시
+ 위치.reload();
+ } 기타 {
+ alert('프로젝트를 찾을 수 없습니다.');
+ }
+ });
+ }
+});
