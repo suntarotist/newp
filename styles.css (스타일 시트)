@@ -1,0 +1,121 @@
+/* Reset 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+#projects {
+    margin-top: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+}
+
+.project-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+#project-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#project-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#project-form label {
+    margin: 10px 0 5px;
+}
+
+#project-form input, 
+#project-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+ 국경-radius: 5 px;
+}
+
+#프로젝트 양식 버튼 {
+ 마진 탑: 20 px;
+ 패딩: 10 px;
+ 테두리: 없음;
+ 배경색: #333;
+ 색상: #ffff;
+ 국경-radius: 5 px;
+ 커서: 포인터;
+}
+
+#프로젝트 양식 버튼:hover {
+ 배경색: #555;
+}
+
+바닥자 {
+ 배경색: #333;
+ 색상: #ffff;
+ 텍스트 align: 가운데;
+ 패딩: 10 px 0;
+ 위치: 고정;
+ 너비: 100%;
+ 하단: 0;
+}
