@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<헤드>
+ <meta Charset="UTF-8">
+ <meta 이름="viewport" 콘텐츠="width=장치 너비, 초기 스케일=1.0">
+ <title>프로젝트 생성</title>
+ <링크 rel="스타일시트" href="스타일.css">
+</헤드>
+<바디>
+ <header>
+ <h1>크라우드펀딩 플랫폼</h1>
+ <nav>
+ <a href="index.html">홈</a>
+ <a href="create-project.html">프로젝트 생성</a>
+ </nav>
+ </header>
+
+ <메인>
+ <섹션 ID="프로젝트 만들기">
+ <h2>새 프로젝트 생성</h2>
+ <form ID="프로젝트 양식">
+ <="title">프로젝트 제목 라벨://label>
+ <입력 유형="텍스트" ID="title" 이름="title" 필수>
+
+ <="desc 설명"의 라벨>프로젝트 설명://label>
+ <textarea ID="desc 설명" 이름="desc 설명" 필수></textarea>
+
+ <="목표" 라벨> 목표 금액:/label>
+ <입력 유형="숫자" ID="골" 이름="골" 필수>
+
+ <="이미지" 라벨>프로젝트 이미지:</label>
+ <입력 유형="파일" id="image" name="image" accept="image/*"필수>
+
+ <버튼 유형="submit">프로젝트 생성</button>
+ </양식>
+ </섹션>
+ </메인>
+
+ <footer>
+ <p>&copy; 2024 크라우드펀딩 플랫폼. 무단 전재 금지.</p>
+ </footer>
+
+ <script src="scripts.js"></script>
+</바디>
+</html>
